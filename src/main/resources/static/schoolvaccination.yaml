@@ -1,0 +1,528 @@
+openapi: 3.0.3
+info:
+  title: School Vaccination Portal API
+  description: Full OpenAPI specification for all entities
+  version: 1.0.0
+servers:
+  - url: http://localhost:8080/api
+
+externalDocs:
+  description: Examples file
+  url: ./schoolvaccination-example.json
+
+tags:
+  - name: VaccineInfo
+  - name: VaccinationCenter
+  - name: VaccinationSchedule
+  - name: VaccinationRecord
+  - name: Registration
+  - name: FrontLiner
+  - name: FrontLinerCategory
+  - name: Student
+
+paths:
+  /vaccine-info:
+    get:
+      tags: [VaccineInfo]
+      summary: Get all vaccine information
+      description: Retrieve a list of vaccine information.
+      operationId: getAllVaccineInfo
+      responses:
+        '200':
+          description: Successful retrieval
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/VaccineInfo'
+              examples:
+                Example1:
+                  externalValue: './schoolvaccination-example.json#/VaccineInfo/get/0'
+                Example2:
+                  externalValue: './schoolvaccination-example.json#/VaccineInfo/get/1'
+    post:
+      tags: [VaccineInfo]
+      summary: Create vaccine information
+      description: Add a new vaccine information entry.
+      operationId: createVaccineInfo
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/VaccineInfo'
+            examples:
+              Example1:
+                externalValue: './schoolvaccination-example.json#/VaccineInfo/post/0'
+              Example2:
+                externalValue: './schoolvaccination-example.json#/VaccineInfo/post/1'
+      responses:
+        '201':
+          description: Created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VaccineInfo'
+
+  /vaccination-centers:
+    get:
+      tags: [VaccinationCenter]
+      summary: Get all vaccination centers
+      description: Retrieve a list of vaccination centers.
+      operationId: getAllVaccinationCenters
+      responses:
+        '200':
+          description: Successful retrieval
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/VaccinationCenter'
+              examples:
+                Example1:
+                  externalValue: './schoolvaccination-example.json#/VaccinationCenter/get/0'
+                Example2:
+                  externalValue: './schoolvaccination-example.json#/VaccinationCenter/get/1'
+    post:
+      tags: [VaccinationCenter]
+      summary: Create a vaccination center
+      description: Add a new vaccination center.
+      operationId: createVaccinationCenter
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/VaccinationCenter'
+            examples:
+              Example1:
+                externalValue: './schoolvaccination-example.json#/VaccinationCenter/post/0'
+              Example2:
+                externalValue: './schoolvaccination-example.json#/VaccinationCenter/post/1'
+      responses:
+        '201':
+          description: Created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VaccinationCenter'
+
+  /vaccination-schedules:
+    get:
+      tags: [VaccinationSchedule]
+      summary: Get all vaccination schedules
+      description: Retrieve a list of vaccination schedules.
+      operationId: getAllVaccinationSchedules
+      responses:
+        '200':
+          description: Successful retrieval
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/VaccinationSchedule'
+              examples:
+                Example1:
+                  externalValue: './schoolvaccination-example.json#/VaccinationSchedule/get/0'
+                Example2:
+                  externalValue: './schoolvaccination-example.json#/VaccinationSchedule/get/1'
+    post:
+      tags: [VaccinationSchedule]
+      summary: Create a vaccination schedule
+      description: Add a new vaccination schedule.
+      operationId: createVaccinationSchedule
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/VaccinationSchedule'
+            examples:
+              Example1:
+                externalValue: './schoolvaccination-example.json#/VaccinationSchedule/post/0'
+              Example2:
+                externalValue: './schoolvaccination-example.json#/VaccinationSchedule/post/1'
+      responses:
+        '201':
+          description: Created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VaccinationSchedule'
+
+  /vaccination-records:
+    get:
+      tags: [VaccinationRecord]
+      summary: Get all vaccination records
+      description: Retrieve a list of vaccination records.
+      operationId: getAllVaccinationRecords
+      responses:
+        '200':
+          description: Successful retrieval
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/VaccinationRecord'
+              examples:
+                Example1:
+                  externalValue: './schoolvaccination-example.json#/VaccinationRecord/get/0'
+                Example2:
+                  externalValue: './schoolvaccination-example.json#/VaccinationRecord/get/1'
+    post:
+      tags: [VaccinationRecord]
+      summary: Create a vaccination record
+      description: Add a new vaccination record.
+      operationId: createVaccinationRecord
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/VaccinationRecord'
+            examples:
+              Example1:
+                externalValue: './schoolvaccination-example.json#/VaccinationRecord/post/0'
+              Example2:
+                externalValue: './schoolvaccination-example.json#/VaccinationRecord/post/1'
+      responses:
+        '201':
+          description: Created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VaccinationRecord'
+
+  /registrations:
+    get:
+      tags: [Registration]
+      summary: Get all registrations
+      description: Retrieve a list of registrations.
+      operationId: getAllRegistrations
+      responses:
+        '200':
+          description: Successful retrieval
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Registration'
+              examples:
+                Example1:
+                  externalValue: './schoolvaccination-example.json#/Registration/get/0'
+                Example2:
+                  externalValue: './schoolvaccination-example.json#/Registration/get/1'
+    post:
+      tags: [Registration]
+      summary: Create a registration
+      description: Add a new registration.
+      operationId: createRegistration
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Registration'
+            examples:
+              Example1:
+                externalValue: './schoolvaccination-example.json#/Registration/post/0'
+              Example2:
+                externalValue: './schoolvaccination-example.json#/Registration/post/1'
+      responses:
+        '201':
+          description: Created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Registration'
+
+  /frontliners:
+    get:
+      tags: [FrontLiner]
+      summary: Get all frontliners
+      description: Retrieve a list of frontliners.
+      operationId: getAllFrontliners
+      responses:
+        '200':
+          description: Successful retrieval
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/FrontLiner'
+              examples:
+                Example1:
+                  externalValue: './schoolvaccination-example.json#/FrontLiner/get/0'
+                Example2:
+                  externalValue: './schoolvaccination-example.json#/FrontLiner/get/1'
+    post:
+      tags: [FrontLiner]
+      summary: Create a frontliner
+      description: Add a new frontliner.
+      operationId: createFrontliner
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FrontLiner'
+            examples:
+              Example1:
+                externalValue: './schoolvaccination-example.json#/FrontLiner/post/0'
+              Example2:
+                externalValue: './schoolvaccination-example.json#/FrontLiner/post/1'
+      responses:
+        '201':
+          description: Created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrontLiner'
+
+  /frontliner-categories:
+    get:
+      tags: [FrontLinerCategory]
+      summary: Get all frontliner categories
+      description: Retrieve a list of frontliner categories.
+      operationId: getAllFrontlinerCategories
+      responses:
+        '200':
+          description: Successful retrieval
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/FrontLinerCategory'
+              examples:
+                Example1:
+                  externalValue: './schoolvaccination-example.json#/FrontLinerCategory/get/0'
+                Example2:
+                  externalValue: './schoolvaccination-example.json#/FrontLinerCategory/get/1'
+    post:
+      tags: [FrontLinerCategory]
+      summary: Create a frontliner category
+      description: Add a new frontliner category.
+      operationId: createFrontlinerCategory
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FrontLinerCategory'
+            examples:
+              Example1:
+                externalValue: './schoolvaccination-example.json#/FrontLinerCategory/post/0'
+              Example2:
+                externalValue: './schoolvaccination-example.json#/FrontLinerCategory/post/1'
+      responses:
+        '201':
+          description: Created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrontLinerCategory'
+
+  /students:
+    get:
+      tags: [Student]
+      summary: Get all students
+      description: Retrieve a list of students.
+      operationId: getAllStudents
+      responses:
+        '200':
+          description: Successful retrieval
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Student'
+              examples:
+                Example1:
+                  externalValue: './schoolvaccination-example.json#/Student/get/0'
+                Example2:
+                  externalValue: './schoolvaccination-example.json#/Student/get/1'
+    post:
+      tags: [Student]
+      summary: Create a student
+      description: Add a new student.
+      operationId: createStudent
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Student'
+            examples:
+              Example1:
+                externalValue: './schoolvaccination-example.json#/Student/post/0'
+              Example2:
+                externalValue: './schoolvaccination-example.json#/Student/post/1'
+      responses:
+        '201':
+          description: Created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Student'
+
+# Similarly expand for VaccinationCenter, VaccinationSchedule, VaccinationRecord, Registration, FrontLiner, FrontLinerCategory, Student
+# Due to length limits, will continue expanding these properly below in following steps.
+
+components:
+  schemas:
+    VaccineInfo:
+      type: object
+      properties:
+        vaccineId:
+          type: integer
+        vaccineName:
+          type: string
+        vaccineInfo:
+          type: string
+    VaccinationCenter:
+      type: object
+      properties:
+        centerId:
+          type: integer
+        vaccinationCenter:
+          type: string
+        address:
+          type: string
+        contactNumber:
+          type: string
+        longitude:
+          type: number
+          format: double
+        latitude:
+          type: number
+          format: double
+        status:
+          type: string
+    VaccinationSchedule:
+      type: object
+      properties:
+        scheduleId:
+          type: integer
+        date:
+          type: string
+          format: date
+        timeStart:
+          type: string
+          format: time
+        timeEnd:
+          type: string
+          format: time
+        vaccinationCenterId:
+          type: integer
+        vaccineInfoId:
+          type: integer
+        slotsAvailable:
+          type: integer
+    VaccinationRecord:
+      type: object
+      properties:
+        recordId:
+          type: integer
+        registrationId:
+          type: integer
+        vaccineInfoId:
+          type: integer
+        firstDoseDate:
+          type: string
+          format: date
+        secondDoseDate:
+          type: string
+          format: date
+        boosterDoseDate:
+          type: string
+          format: date
+        vaccineBooster:
+          type: boolean
+        frontLinerId:
+          type: integer
+        doctorComments:
+          type: string
+        patientFeelings:
+          type: string
+        remarks:
+          type: string
+    Registration:
+      type: object
+      properties:
+        registrationId:
+          type: integer
+        firstName:
+          type: string
+        lastName:
+          type: string
+        middleName:
+          type: string
+        contact:
+          type: string
+        email:
+          type: string
+        dob:
+          type: string
+          format: date
+        username:
+          type: string
+        password:
+          type: string
+        status:
+          type: string
+    FrontLiner:
+      type: object
+      properties:
+        frontLinerId:
+          type: integer
+        completeName:
+          type: string
+        frontLinerCategoryId:
+          type: integer
+        contact:
+          type: string
+        email:
+          type: string
+        facebookAccount:
+          type: string
+    FrontLinerCategory:
+      type: object
+      properties:
+        categoryId:
+          type: integer
+        categoryName:
+          type: string
+        jobDescription:
+          type: string
+    Student:
+      type: object
+      properties:
+        studentId:
+          type: integer
+        fullName:
+          type: string
+        dob:
+          type: string
+          format: date
+        gender:
+          type: string
+        className:
+          type: string
+        section:
+          type: string
+        rollNumber:
+          type: integer
+        contactInfo:
+          type: string
+        vaccinated:
+          type: boolean
+        vaccinationRecordId:
+          type: integer

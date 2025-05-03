@@ -1,0 +1,294 @@
+{
+  "VaccineInfo": {
+    "get": [
+      { "vaccineId": 1, "vaccineName": "Pfizer", "vaccineInfo": "COVID-19 mRNA vaccine" },
+      { "vaccineId": 2, "vaccineName": "Moderna", "vaccineInfo": "COVID-19 mRNA vaccine" }
+    ],
+    "post": [
+      { "vaccineName": "Pfizer", "vaccineInfo": "COVID-19 mRNA vaccine" },
+      { "vaccineName": "Moderna", "vaccineInfo": "COVID-19 mRNA vaccine" }
+    ]
+  },
+  "VaccinationCenter": {
+    "get": [
+      {
+        "centerId": 1,
+        "vaccinationCenter": "Central Clinic",
+        "address": "123 Main St",
+        "contactNumber": "9876543210",
+        "longitude": 77.59,
+        "latitude": 12.97,
+        "status": "Active"
+      },
+      {
+        "centerId": 2,
+        "vaccinationCenter": "East Health Unit",
+        "address": "456 Side Rd",
+        "contactNumber": "9876501234",
+        "longitude": 78.59,
+        "latitude": 13.97,
+        "status": "Inactive"
+      }
+    ],
+    "post": [
+      {
+        "vaccinationCenter": "Central Clinic",
+        "address": "123 Main St",
+        "contactNumber": "9876543210",
+        "longitude": 77.59,
+        "latitude": 12.97,
+        "status": "Active"
+      },
+      {
+        "vaccinationCenter": "East Health Unit",
+        "address": "456 Side Rd",
+        "contactNumber": "9876501234",
+        "longitude": 78.59,
+        "latitude": 13.97,
+        "status": "Inactive"
+      }
+    ]
+  },
+  "VaccinationSchedule": {
+    "get": [
+      {
+        "scheduleId": 1,
+        "date": "2025-05-10",
+        "timeStart": "09:00",
+        "timeEnd": "11:00",
+        "vaccinationCenterId": 1,
+        "vaccineInfoId": 1,
+        "slotsAvailable": 100
+      },
+      {
+        "scheduleId": 2,
+        "date": "2025-06-12",
+        "timeStart": "10:00",
+        "timeEnd": "12:00",
+        "vaccinationCenterId": 2,
+        "vaccineInfoId": 2,
+        "slotsAvailable": 50
+      }
+    ],
+    "post": [
+      {
+        "date": "2025-05-10",
+        "timeStart": "09:00",
+        "timeEnd": "11:00",
+        "vaccinationCenterId": 1,
+        "vaccineInfoId": 1,
+        "slotsAvailable": 100
+      },
+      {
+        "date": "2025-06-12",
+        "timeStart": "10:00",
+        "timeEnd": "12:00",
+        "vaccinationCenterId": 2,
+        "vaccineInfoId": 2,
+        "slotsAvailable": 50
+      }
+    ]
+  },
+  "VaccinationRecord": {
+    "get": [
+      {
+        "recordId": 1,
+        "registrationId": 1,
+        "vaccineInfoId": 1,
+        "firstDoseDate": "2025-05-11",
+        "secondDoseDate": "2025-06-11",
+        "boosterDoseDate": "2025-12-11",
+        "vaccineBooster": true,
+        "frontLinerId": 1,
+        "doctorComments": "Good response",
+        "patientFeelings": "Normal",
+        "remarks": "No issues"
+      },
+      {
+        "recordId": 2,
+        "registrationId": 2,
+        "vaccineInfoId": 2,
+        "firstDoseDate": "2025-07-15",
+        "secondDoseDate": "2025-08-15",
+        "boosterDoseDate": "2026-02-15",
+        "vaccineBooster": false,
+        "frontLinerId": 2,
+        "doctorComments": "Mild side effects",
+        "patientFeelings": "Fatigue",
+        "remarks": "Monitor closely"
+      }
+    ],
+    "post": [
+      {
+        "registrationId": 1,
+        "vaccineInfoId": 1,
+        "firstDoseDate": "2025-05-11",
+        "secondDoseDate": "2025-06-11",
+        "boosterDoseDate": "2025-12-11",
+        "vaccineBooster": true,
+        "frontLinerId": 1,
+        "doctorComments": "Good response",
+        "patientFeelings": "Normal",
+        "remarks": "No issues"
+      },
+      {
+        "registrationId": 2,
+        "vaccineInfoId": 2,
+        "firstDoseDate": "2025-07-15",
+        "secondDoseDate": "2025-08-15",
+        "boosterDoseDate": "2026-02-15",
+        "vaccineBooster": false,
+        "frontLinerId": 2,
+        "doctorComments": "Mild side effects",
+        "patientFeelings": "Fatigue",
+        "remarks": "Monitor closely"
+      }
+    ]
+  },
+  "Registration": {
+    "get": [
+      {
+        "registrationId": 1,
+        "firstName": "Jane",
+        "lastName": "Doe",
+        "middleName": "A",
+        "contact": "1234567890",
+        "email": "jane@example.com",
+        "dob": "2010-01-01",
+        "username": "janedoe",
+        "password": "password",
+        "status": "Active"
+      },
+      {
+        "registrationId": 2,
+        "firstName": "John",
+        "lastName": "Smith",
+        "middleName": "B",
+        "contact": "9876543210",
+        "email": "john@example.com",
+        "dob": "2009-12-12",
+        "username": "johnsmith",
+        "password": "password",
+        "status": "Inactive"
+      }
+    ],
+    "post": [
+      {
+        "firstName": "Jane",
+        "lastName": "Doe",
+        "middleName": "A",
+        "contact": "1234567890",
+        "email": "jane@example.com",
+        "dob": "2010-01-01",
+        "username": "janedoe",
+        "password": "password",
+        "status": "Active"
+      },
+      {
+        "firstName": "John",
+        "lastName": "Smith",
+        "middleName": "B",
+        "contact": "9876543210",
+        "email": "john@example.com",
+        "dob": "2009-12-12",
+        "username": "johnsmith",
+        "password": "password",
+        "status": "Inactive"
+      }
+    ]
+  },
+  "FrontLiner": {
+    "get": [
+      {
+        "frontLinerId": 1,
+        "completeName": "Dr. Alice Johnson",
+        "frontLinerCategoryId": 1,
+        "contact": "1231231234",
+        "email": "alice@hospital.com",
+        "facebookAccount": "aliceFB"
+      },
+      {
+        "frontLinerId": 2,
+        "completeName": "Dr. Bob Williams",
+        "frontLinerCategoryId": 2,
+        "contact": "4564564567",
+        "email": "bob@clinic.com",
+        "facebookAccount": "bobFB"
+      }
+    ],
+    "post": [
+      {
+        "completeName": "Dr. Alice Johnson",
+        "frontLinerCategoryId": 1,
+        "contact": "1231231234",
+        "email": "alice@hospital.com",
+        "facebookAccount": "aliceFB"
+      },
+      {
+        "completeName": "Dr. Bob Williams",
+        "frontLinerCategoryId": 2,
+        "contact": "4564564567",
+        "email": "bob@clinic.com",
+        "facebookAccount": "bobFB"
+      }
+    ]
+  },
+  "FrontLinerCategory": {
+    "get": [
+      {
+        "categoryId": 1,
+        "categoryName": "Doctor",
+        "jobDescription": "Responsible for vaccinations"
+      },
+      {
+        "categoryId": 2,
+        "categoryName": "Nurse",
+        "jobDescription": "Assists in vaccination processes"
+      }
+    ],
+    "post": [
+      {
+        "categoryName": "Doctor",
+        "jobDescription": "Responsible for vaccinations"
+      },
+      {
+        "categoryName": "Nurse",
+        "jobDescription": "Assists in vaccination processes"
+      }
+    ]
+  },
+  "Student": {
+    "get": [
+      {
+        "studentId": 1,
+        "fullName": "John Doe",
+        "dob": "2010-04-23",
+        "gender": "Male",
+        "className": "5th Grade",
+        "section": "A",
+        "rollNumber": 12,
+        "contactInfo": "1234567890",
+        "vaccinated": true,
+        "vaccinationRecordId": 1
+      },
+      {
+        "studentId": 2,
+        "fullName": "Jane Smith",
+        "dob": "2011-08-15",
+        "gender": "Female",
+        "className": "4th Grade",
+        "section": "B",
+        "rollNumber": 22,
+        "contactInfo": "0987654321",
+        "vaccinated": false,
+        "vaccinationRecordId": 2
+      }
+    ],
+    "post": [
+      {
+        "fullName": "John Doe",
+        "dob": "2010-04-23",
+        "gender": "Male",
+        "className": "5th Grade",
+        "section": "A",
+        "rollNumber": 12,
